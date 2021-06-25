@@ -3,12 +3,15 @@ import Illustration from '../assets/images/illustration.svg'
 import Logo from '../assets/images/logo.svg'
 import '../styles/auth.scss'
 import { Button } from '../components/Button'
+// import { useAuth } from '../hooks/useAuth'
+// import { AuthContext } from '../context/AuthContext'
+// import { useContext } from 'react'
 
 
 
 
 export function NewRoom(){
-
+    //  const { user } = useAuth()
 
   
     return (

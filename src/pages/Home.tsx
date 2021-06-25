@@ -5,23 +5,23 @@ import GoogleIcon from '../assets/images/google-icon.svg'
 import '../styles/auth.scss'
 import { Button } from '../components/Button'
 import { useHistory } from 'react-router'
-import { auth, firebase } from '../services/firebase'
+// import { AuthContext } from '../context/AuthContext'
+// import { useContext} from 'react'
+import { useAuth } from '../hooks/useAuth'
+
 
 export function Home(){
     const history = useHistory();
+    const {user, signInWithGoogle } = useAuth()
     
-    
 
-    function handleCreateRoom(){
-        const provider = new firebase.auth.GoogleAuthProvider();
+    async function handleCreateRoom(){
 
-        auth.signInWithPopup(provider).then(result =>{
-            console.log(result)
+        if(!user){
+          await  signInWithGoogle()
+        }
 
-            history.push('/rooms/news');
-        })
-
-        
+        history.push('/rooms/news');        
     }
 
 
