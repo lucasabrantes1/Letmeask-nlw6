@@ -1,21 +1,9 @@
-import { createContext } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { Home } from "./pages/Home";
 import {NewRoom } from "./pages/NewRoom";
 import { AuthContextProvider } from './context/AuthContext'
+import { Room } from './pages/Room';
 
-type User = { 
-  id: string;
-  name: string;
-  avatar: string;
-}
-
-type AuthContextType = {
-  user: User | undefined;
-  signInWithGoogle: () => Promise<void>;
-}
-
-export const AuthContext = createContext({} as AuthContextType);
 
 function App() {
   
@@ -23,10 +11,13 @@ function App() {
   return (
     <BrowserRouter>
       <AuthContextProvider>
+       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/rooms/news" component={NewRoom} />
+        <Route path="/rooms/new" component={NewRoom} />
+        <Route path="/rooms/:id" component={Room} />
+       </Switch>
       </AuthContextProvider>
-    </BrowserRouter>
+    </BrowserRouter>      
 
   );
 }
