@@ -1,11 +1,4 @@
-<p align="center">
-  ![image](https://user-images.githubusercontent.com/62405928/123525000-4aa15600-d6a4-11eb-9486-7c58e9bb7081.png)
-</p>
-
-
-<h1 align="center">
-    <img alt="Letmeask" src=".github/cover.svg" />
-</h1>
+![image](https://user-images.githubusercontent.com/62405928/123525020-67d62480-d6a4-11eb-86df-81aeaa0ecb06.png)>
 
 <br>
 
