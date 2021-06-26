@@ -13,7 +13,6 @@ import { useRoom } from '../hooks/useRoom';
 import { database } from '../services/firebase';
 
 import '../styles/room.scss';
-import { async } from 'q';
 
 type RoomParams = {
   id: string;
@@ -80,25 +79,23 @@ export function AdminRoom() {
                 author={question.author}
                 isAnswered={question.isAnswered}
                 isHighlighted={question.isHighlighted}
-              > 
+              >
                 {!question.isAnswered && (
                   <>
-                  <button
-                  type="button"
-                  onClick={() => handleCheckQuestionAsAnswered(question.id)}
-                >
-                  <img src={checkImg} alt="Marcar pergunta como respondida" />
-                </button>
-    
-                   <button
+                    <button
+                      type="button"
+                      onClick={() => handleCheckQuestionAsAnswered(question.id)}
+                    >
+                      <img src={checkImg} alt="Marcar pergunta como respondida" />
+                    </button>
+                    <button
                       type="button"
                       onClick={() => handleHighlightQuestion(question.id)}
                     >
-                      <img src={answerImg} alt="Dar destaque a pergunta" />
+                      <img src={answerImg} alt="Dar destaque à pergunta" />
                     </button>
                   </>
                 )}
-
                 <button
                   type="button"
                   onClick={() => handleDeleteQuestion(question.id)}
