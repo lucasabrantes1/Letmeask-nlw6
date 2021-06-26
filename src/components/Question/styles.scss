@@ -8,36 +8,58 @@
     margin: 8px;
   }
 
-  p{
+  p {
     color: #29292e;
   }
 
-  footer{
+  footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 24px;
 
     .user-info {
-      display:  flex;
-      align-items:  center;
+      display: flex;
+      align-items: center;
 
-      img{
+      img {
         width: 32px;
         height: 32px;
         border-radius: 50%;
-        
       }
 
-       span{
+      span {
         margin-left: 8px;
         color: #737380;
         font-weight: 500;
         font-size: 14px;
-        
+      }
+    }
+
+    button {
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      gap: 8px;
+      transition: 0.2s;
+
+      &.like-button {
+        display: flex;
+        align-items: flex-end;
+        color: #737380;
+
+        &.liked {
+          color: #835afd;
+        }
+
+        svg path {
+          stroke: #835afd;
+        }
+      }
+
+      &:hover{
+          filter: brightness(0.7);
       }
     }
   }
 }
-
-
