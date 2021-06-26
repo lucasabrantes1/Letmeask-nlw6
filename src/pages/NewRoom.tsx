@@ -6,7 +6,7 @@ import '../styles/auth.scss'
 import { Button } from '../components/Button'
 import { database } from '../services/firebase'
 import { useAuth } from '../hooks/useAuth'
-import userEvent from '@testing-library/user-event'
+// import userEvent from '@testing-library/user-event'
 // import { AuthContext } from '../context/AuthContext'
 // import { useContext } from 'react'
 
